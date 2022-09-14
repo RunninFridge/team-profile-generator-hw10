@@ -10,7 +10,7 @@ const Intern = require('./staff/intern');
 
 
 //Code for inquirer to get data
-const team = [];
+const genTeam = [];
 //iquirer for selecting which member to add
 function start() {
     addStaff();
@@ -65,7 +65,7 @@ function managerInput(){
             data.email,
             data.officeNumber,
         );
-        team.push(manager);
+        genTeam.push(manager);
         addStaff();
       });
 };
@@ -99,7 +99,7 @@ function engineerInput(){
             data.email,
             data.github,
         );
-        team.push(engineer);
+        genTeam.push(engineer);
         addStaff();
     });
 };
@@ -133,7 +133,7 @@ function internInput(){
             data.email,
             data.school,
         );
-        team.push(intern);
+        genTeam.push(intern);
         addStaff();
     });
 };
@@ -145,7 +145,7 @@ function createStaffList() {
     if (!fs.existsSync(OUTPUT_DIR)){
         fs.mkdirSync(OUTPUT_DIR);
     } else {
-        fs.writeFileSync(outputPath, render(team), 'UTF-8');
+        fs.writeFileSync(outputPath, render(genTeam), 'UTF-8');
         console.log('Created Output folder with your new member list!')
     };
 };
