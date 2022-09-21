@@ -15,7 +15,7 @@ const genTeam = [];
 function start() {
     addStaff();
 };
-
+//initial iquirer to add a member
 function addStaff(){
     inquirer.prompt([
         {
@@ -149,5 +149,80 @@ function createStaffList() {
         console.log('Created Output folder with your new member list!')
     };
 };
+//html taken from internet
+// function to generate html page
+function renderHTML() {
+    const htmlPage = [];
+    const htmlHead =
+    `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class"container">
+            <div class="jumbotron text-center">
+                <div class="content">
+                    <h1 class="team-display">Team</h1>
+                </div>
+            </div>
+        </div>
 
+        <div class="container>
+            <div class="row p-3 d-flex justify-content-between">`
+
+                htmlPage.push(htmlHead);
+                for (let i = o; i < employees.length; i++) {
+                    let card =`
+                        <div class="card" style="width: 19rem">
+                            <div class="card-body">
+                                <h3 class="card-title">${employees[i].name}</h3>
+                                <h5 class="card-subtitle">${employees[i].role}</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <strong>ID:</strong> ${employees[i].id}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Email:</strong>
+                                    <a href="mailto:${employees[i].email}"> ${employees.email}</a>
+                                    </li>`;
+                    if (employees[i].officeNumber) {
+                        card +=`
+                            <li class="list-group-item">
+                                <strong>Office Number:</strong>${employees[i].officeNumber}
+                            </li>`;
+                    if (employees[i].github) {
+                        card +=`
+                            <li class="list-group-item">
+                                <strong>GitHub Username:</strong>${employees[i].gitHub}
+                            </li>`;
+                    if (employees[i].school) {
+                        card +=`
+                            <li class="list-group-item">
+                                 <strong>School Name:</strong>${employees[i].school}
+                            </li>`;
+                    }
+                    card +=`
+                                </ul>
+                }
+                        </div>
+                 </div>`;
+    htmlHead.push(card);
+            }
+    const htmlFoot =`
+                </div>
+            </div>
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    </body>
+    </html>`;
+                htmlPage.push(htmlFoot);
+
+                fs.writeFile('dist/index.html', htmlPage.join(''), (err) =>
+                    err ? console.log(err) : console.log('Created index.html!')
+                    );
+}}}
 start();

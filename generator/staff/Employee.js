@@ -1,10 +1,9 @@
 class Employee  {
-    constractor(id, name, email, gitHub){
+    constractor(id, name, email){
         this.id = id;
         this.name = name;
         this.email = email;
-        this.gitHub = gitHub;
-        this.Employee = 'Employee';
+        this.title = 'Employee';
     }
     getId(){
         return this.id;
@@ -15,10 +14,7 @@ class Employee  {
     getEmail(){
         return this.email;
     }
-    getGithub(){
-        return this.gitHub;
-    }
-    getPosition(){
+    getTitle(){
         return this.title;
     }
 }
