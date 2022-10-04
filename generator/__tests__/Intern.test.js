@@ -1,4 +1,4 @@
-const Intern = require("../staff/Intern.js");
+const Intern = require("../lib/Intern.js");
 //Test to greate an intern and their school
 test("Will create an Intern", () => {
     const n = new Inter('internTest', 9999, 'interntest@gmail.com', 'UW');

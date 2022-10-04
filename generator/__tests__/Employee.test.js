@@ -1,4 +1,4 @@
-const Employee = require("../staff/Employee.js");
+const Employee = require("../lib/Employee.js");
 //test to see if this will create an employee
 test("Will create an employee", () => {
     const n = new Employee('employeeTest', 9999, 'employeetest@gmail.com');

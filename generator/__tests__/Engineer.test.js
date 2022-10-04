@@ -1,4 +1,4 @@
-const Engineer = require("../staff/Engineer.js");
+const Engineer = require("../lib/Engineer.js");
 //test to see if this will create an engineer and the github
 test("Will create an Engineer", () => {
     const n = new Engineer('engineerTest', 90, 'engineertest@gmail.com', 'TestEngineer345');

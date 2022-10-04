@@ -1,7 +1,7 @@
-const Employee = require("../staff/Employee.js");
-const Engineer = require("../staff/Engineer.js");
-const Intern = require("../staff/Intern.js");
-const Manager = require("../staff/Manager.js");
+const Employee = require("../lib/Employee.js");
+const Engineer = require("../lib/Engineer.js");
+const Intern = require("../lib/Intern.js");
+const Manager = require("../lib/Manager.js");
 
 const genManager = function(manager) {
     return `

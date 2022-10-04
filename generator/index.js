@@ -4,9 +4,9 @@ const path = require('path');
 const fs = require('fs');
 const genHtml = require('./src/htmlGenerator.js')
 // listing staff
-const Manager = require('./staff/Manager.js');
-const Engineer = require('./staff/Engineer.js');
-const Intern = require('./staff/Intern.js');
+const Manager = require('./lib/Manager.js');
+const Engineer = require('./lib/Engineer.js');
+const Intern = require('./lib/Intern.js');
 
 
 //Code for inquirer to get data
